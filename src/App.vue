@@ -1,5 +1,3 @@
 <template>
-    <h1 class="text-3xl text-green-700">App.vue</h1>
+    <RouterView />
 </template>
-
-<script setup lang="ts"></script>
