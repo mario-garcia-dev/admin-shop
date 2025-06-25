@@ -1,10 +1,12 @@
 import type { RouteRecordRaw } from 'vue-router';
+import isAuthenticatedGuard from '../guards/is-authenticated.guard';
 
 export const authRoutes: RouteRecordRaw[] = [
     {
         path: '/auth',
         name: 'auth',
         redirect: { name: 'login' },
+        beforeEnter: isAuthenticatedGuard,
         component: () => import('../layouts/AuthLayout.vue'),
         children: [
             {
@@ -16,6 +18,11 @@ export const authRoutes: RouteRecordRaw[] = [
                 path: 'register',
                 name: 'register',
                 component: () => import('../pages/RegisterPage.vue'),
+            },
+            {
+                path: 'change-password',
+                name: 'change-password',
+                component: () => import('../pages/ChangePasswordPage.vue'),
             },
         ],
     },
