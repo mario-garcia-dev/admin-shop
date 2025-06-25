@@ -15,7 +15,7 @@
         <label class="block mt-5 font-semibold">Email</label>
         <input
             v-model="form.email"
-            type="text"
+            type="email"
             class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md"
         />
         <label class="block mt-5 font-semibold">Password</label>

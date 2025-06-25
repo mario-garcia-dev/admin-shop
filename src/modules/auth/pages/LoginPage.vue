@@ -53,7 +53,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
 import { useAuthStore } from '../store/authStore';
 
 const form = reactive({
@@ -67,4 +67,10 @@ const authStore = useAuthStore();
 const onLogin = () => {
     authStore.loginAction(form.username, form.password, form.rememberMe);
 };
+
+const user = ref<string | null>(localStorage.getItem('user'));
+
+if (user.value && user.value.length !== 0) {
+    form.username = user.value;
+}
 </script>
