@@ -1,3 +1,7 @@
 <template>
-    <h1>Shop Layout</h1>
+    <HeaderComponent />
 </template>
+
+<script setup lang="ts">
+import HeaderComponent from '@/modules/common/components/HeaderComponent.vue';
+</script>
